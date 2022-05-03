@@ -1,0 +1,22 @@
+.menu {
+    background-color: rgb(5, 5, 15);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    
+}
+
+.Links {
+    color: rgb(247, 212, 218);
+    font-weight: bold;
+    text-decoration: none;
+    bottom: none;
+    margin: 2rem;
+    padding: auto;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    width: 5rem;
+}

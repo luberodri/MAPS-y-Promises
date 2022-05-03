@@ -1,9 +1,8 @@
-
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-       <h1>Slums off beverly hills</h1>
+    <div className="App"> <Navbar></Navbar>
     </div>
   );
 }

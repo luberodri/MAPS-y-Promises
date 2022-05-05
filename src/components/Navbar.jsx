@@ -1,4 +1,5 @@
-
+import Carticon from "./Carticon"
+import Cardicon from "./Carticon"
 
 const Navbar = () => {
 
@@ -10,6 +11,7 @@ const Navbar = () => {
         <a className= "Links" href="#"><li>Productos</li></a>
         <a className= "Links" href="#"><li>Quienes Somos</li></a>
         <a className= "Links" href="#"><li>Contacto</li></a>
+        <Carticon count={9}></Carticon>  
       </nav>
         </div>
         

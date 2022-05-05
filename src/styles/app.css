@@ -18,5 +18,14 @@
 }
 
 .logo {
-    width: 5rem;
+    width: 10rem;
+}
+.carrito {
+    width: 1rem;
+}
+
+.Saludo {
+    font-family: 'Poppins', sans-serif;
+    color: blueviolet;
+
 }

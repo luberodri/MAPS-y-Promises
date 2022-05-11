@@ -1,24 +1,68 @@
-import Carticon from "./Carticon"
-import Cardicon from "./Carticon"
 
-const Navbar = () => {
-
-    return (
-        <div>
-            <nav className="menu"> 
-            <img src="/logo.png" alt="logo" className= "logo"/>
-        <a className= "Links" href="#"><li>Inicio</li></a>
-        <a className= "Links" href="#"><li>Productos</li></a>
-        <a className= "Links" href="#"><li>Quienes Somos</li></a>
-        <a className= "Links" href="#"><li>Contacto</li></a>
-        <Carticon count={9}></Carticon>  
-      </nav>
-        </div>
-        
-      
-    )
+import React from "react"
+import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
+import BottomNav from "./BottomNav";
+//Un componente padre puede contener tanto funciones
+//como componentes hijos o de presentacion
+export default function Header ({category1,category2,category3}) {
+  /* ------------------------------- State hook ------------------------------- */
+  const [text, setText] = React.useState("")
+  const [count, setCount] = React.useState(0)
+  const [products, setProducts] = React.useState([])
+  /* --------------------------- Funcion manejadora --------------------------- */
+  const handleRest = () => {
+    console.log("Ejecuto funcion")
+    if(count > 0) {
+      setCount( count - 1)
+    }
+  }
+  /* ------------------------------- USE EFFECT ------------------------------- */
+  React.useEffect(() => {
+    alert("Clickeaste el boton")
+  },[count])
+  React.useEffect(() => {
+    setProducts([
+      {
+        id: 1,
+        title: "Producto",
+      },
+      {
+        id: 2,
+        title: "Producto",
+      },
+    ]);
+  },[])
+  return (
+    <>
+      {/* -------------------- Codigo o maqueta del componente ------------------- */}
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home"></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-end"
+          >
+            <Nav>
+              <Nav.Link href="#home">Inicio</Nav.Link>
+              <Nav.Link href="#link">{category1}</Nav.Link>
+              <Nav.Link href="#link">{category2}</Nav.Link>
+              <Nav.Link href="#link">{category3}</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      {/* ---------------------------- Componentes hijos --------------------------- */}
+      <BottomNav />
+      {text}
+      <input
+        type="button"
+        value="Clickeame"
+        onClick={() => setText("Texto una vez clickeado")}
+      />
+      <input type="button" value="+" onClick={() => setCount(count + 1)} />
+      {count}
+      <input type="button" value="-" onClick={handleRest} />
+    </>
+  );
 }
-
-
-      
-export default Navbar

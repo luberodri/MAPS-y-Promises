@@ -7,10 +7,9 @@ export default class Footer extends React.Component {
     console.log(this.props)
     return (
       <footer>
-        <div ClassName= "Saludo">
-          <p>Tarjeta: 3 Cuotas sin interés 🌻 15% OFF transferencia o depósito 🌻 20% OFF Efectivo{this.props.greeting}</p>
-        </div>
-        
+        <div class="alert alert-info" role="alert">
+        Tarjeta: 3 Cuotas sin interés 🌻 15% OFF transferencia o depósito 🌻 20% OFF Efectivo{this.props.greeting}
+</div>
       </footer>
     )
   }

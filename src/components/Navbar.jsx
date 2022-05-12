@@ -2,21 +2,20 @@
 import React from "react"
 import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
 import BottomNav from "./BottomNav";
-//Un componente padre puede contener tanto funciones
-//como componentes hijos o de presentacion
+
 export default function Header ({category1,category2,category3}) {
-  /* ------------------------------- State hook ------------------------------- */
+  
   const [text, setText] = React.useState("")
   const [count, setCount] = React.useState(0)
   const [products, setProducts] = React.useState([])
-  /* --------------------------- Funcion manejadora --------------------------- */
+ 
   const handleRest = () => {
     console.log("Ejecuto funcion")
     if(count > 0) {
       setCount( count - 1)
     }
   }
-  /* ------------------------------- USE EFFECT ------------------------------- */
+  
   React.useEffect(() => {
     alert("Clickeaste el boton")
   },[count])
@@ -34,7 +33,7 @@ export default function Header ({category1,category2,category3}) {
   },[])
   return (
     <>
-      {/* -------------------- Codigo o maqueta del componente ------------------- */}
+      {/* --------------------  ------------------- */}
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home"></Navbar.Brand>
@@ -52,8 +51,11 @@ export default function Header ({category1,category2,category3}) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* ---------------------------- Componentes hijos --------------------------- */}
+      {}
       <BottomNav />
+      
+
+
       {text}
       <input
         type="button"

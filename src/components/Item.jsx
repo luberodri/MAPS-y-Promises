@@ -14,3 +14,4 @@ export default function Item ({product}) {
     </Card>
   );
 }
+

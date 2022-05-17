@@ -53,6 +53,7 @@ export default function Header ({category1,category2,category3}) {
       {}
       <BottomNav />
       
+      
 
 
       {text}
